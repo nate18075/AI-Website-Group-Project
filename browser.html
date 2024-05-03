@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: rgb(220, 220, 220);
+        }
+
+        .navbar,
+        footer {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            height: auto;
+        }
+
+        .navbar {
+            top: 0;
+        }
+
+        .navbar a {
+            color: rgb(0, 0, 0);
+            padding: 10px 12px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        footer {
+            bottom: 0;
+            margin-top: 30px;
+        }
+
+        form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #6c6d6c;
+            color: white;
+            padding: 10px 14px;
+            margin: 6px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-icons i {
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .intro,
+        .mainbody,
+        .container {
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .books-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .book {
+            text-align: center;
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .book img {
+            width: 100%;
+            height: auto;
+        }
+
+        .book h3,
+        .book p {
+            margin: 5px 0;
+        }
+
+        .container:last-child {
+            margin-bottom: 60px;
+            /* Adjust this value as needed */
+        }
+    </style>
+    <script>
+    function purchase(bookId) {
+        // Redirect to the purchase page with the book ID
+        window.location.href = "purchase.php?bookId=" + bookId;
+    }
+</script>
+</head>
+
+<body>
+    <div class="navbar">
+        <h2>Browser</h2>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="ContactUs.html">Contact</a> |
+            <a href="display_reviews.php">Review</a> |
+            <a href="browser.html">Browse</a> |
+            <a href="login.html">Login</a> |
+            <a href="register.html">Register</a> |
+        </nav>
+    </div>
+    <div class="intro"></div>
+    <p class="mainbody">Below shows the best selling books at LibraryTLC including fiction and non-fiction books!</p>
+    <div class="container">
+        <section id="best-sellers" class="genre-section">
+            <h2>Best Sellers</h2>
+            <div class="books-container">
+                <div class="book">
+                    <a href="javascript:void(0)" onclick="purchase(1)"><img src="image/bestseller1.jpg"
+                            alt="Best Seller 1"></a>
+                    <h3>Normal People</h3>
+                    <p>Sally Rooney</p>
+                    <button onclick="purchase(1)">Purchase</button>
+                </div>
+                <div class="book">
+                    <a href="javascript:void(0)" onclick="purchase(2)"><img src="image/bestseller2.jpg"
+                            alt="Best Seller 2"></a>
+                    <h3>The Silent Patient</h3>
+                    <p>Alex Michaelides</p>
+                    <button onclick="purchase(2)">Purchase</button>
+                </div>
+                <div class="book">
+                    <a href="javascript:void(0)" onclick="purchase(3)"><img src="image/bestseller3.jpg"
+                            alt="Best Seller 3"></a>
+                    <h3>The Psychology of Money</h3>
+                    <p>Morgan Housel</p>
+                    <button onclick="purchase(3)">Purchase</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    </section>
+    </div>
+    <div class="container">
+        <section id="fiction" class="genre-section">
+            <h2>Fiction</h2>
+            <div class="books-container">
+                <div class="book">
+                    <a href="javascript:void(0)" onclick="purchase(4)"><img src="image/fiction1.jpg" alt="Fiction 1"></a>
+                    <h3>The Maid</h3>
+                    <p>Nita Prose</p>
+                    <button onclick="purchase(4)">Purchase</button>
+                </div>
+                <div class="book">
+                    <a href="javascript:void(0)" onclick="purchase(5)"><img src="image/fiction2.jpg" alt="Fiction 2"></a>
+                    <h3>Promise</h3>
+                    <p>Rachel Eliza Griffiths</p>
+                    <button onclick="purchase(5)">Purchase</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container">
+        <section id="non-fiction" class="genre-section">
+            <h2>Non-Fiction</h2>
+            <div class="books-container">
+                <div class="book">
+                    <a href="javascript:void(0)" onclick="purchase(6)"><img src="image/nonfiction1.jpg" alt="Non-Fiction 2"></a>
+                    <h3>The Bee Sting</h3>
+                    <p>Paul Murray</p>
+                    <button onclick="purchase(6)">Purchase</button>
+                </div>
+                <div class="book">
+                    <a href="javascript:void(0)" onclick="purchase(7)"><img src="image/nonfiction2.jpg" alt="Non-Fiction 2"></a>
+                    <h3>Pathfinders</h3>
+                    <p>JL Collins</p>
+                    <button onclick="purchase(7)">Purchase</button>
+                </div>
+            </div>
+        </section>
+        <br><br><br><br><br><br>
+    </div>
+    <footer>
+        <div class="footer-info">
+            <p>Email: info@librarytlc.com <br> Phone: (123) 456-7890</p>
+        </div>
+    </footer>
+</body>
+
+</html>

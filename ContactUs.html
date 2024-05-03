@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(220, 220, 220);
+    }
+
+    .navbar,
+    footer {
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      padding: 20px 25px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      height: auto;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      /* Center the navigation links */
+      align-items: center;
+    }
+
+    .navbar a {
+      color: black;
+      /* Black text */
+      padding: 14px 16px;
+      /* Padding for navigation links */
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    footer {
+      bottom: 0;
+    }
+
+    form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #6c6d6c;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-icons i {
+      font-size: 24px;
+      color: rgb(0, 0, 0);
+    }
+
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+  </style>
+  </style>
+  <script>
+    function validateForm() {
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var librarynumber = document.getElementById('librarynumber').value;
+      var subject = document.getElementById('subject').value;
+
+      if (name == "" || email == "" || librarynumber == "" || subject == "") {
+        alert("All fields must be filled out");
+        return false;
+      }
+
+      alert('Your submission has been made!');
+      return true;
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <img src="image/Library tlc.png" alt="Logo"
+      style="position: absolute; top: 10px; left: 10px; height: 50px;">
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="ContactUs.html">Contact</a> |
+      <a href="display_reviews.php">Review</a> |
+      <a href="browser.html">Browse</a> |
+      <a href="login.html">Login</a> |
+      <a href="register.html">Register</a> |
+  </div>
+
+  <form action="/submit_form" method="post" onsubmit="return validateForm()">
+    <label for="name">Name *</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email *</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="librarynumber">Library Number *</label>
+    <input type="text" id="librarynumber" name="librarynumber" required>
+
+    <label for="locallibrary">Local Library</label>
+    <select id="locallibrary" name="locallibrary">
+      <option value="library1">Library 1</option>
+      <option value="library2">Library 2</option>
+      <option value="library3">Library 3</option>
+    </select>
+
+    <label for="subject">Subject *</label>
+    <input type="text" id="subject" name="subject" required>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <footer>
+    <div class="footer-icons">
+      <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
+      <a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a>
+    </div>
+    <div class="footer-info">
+      <p>123 Library Street, Book City, 12345</p>
+      <p>Email: info@librarytlc.com</p>
+      <p>Phone: (123) 456-7890</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

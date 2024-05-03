@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* Existing styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(220, 220, 220);
+      overflow-y: scroll;
+      /* Enable vertical scrolling */
+    }
+
+    .navbar,
+    footer {
+      background-color: white;
+      color: rgb(0, 0, 0);
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+      /* Ensure navbar and footer stay above content */
+    }
+
+    .navbar {
+      top: 0;
+    }
+
+    .navbar a {
+      color: rgb(0, 0, 0);
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    footer {
+      bottom: 0;
+    }
+
+    form {
+  width: 600px;
+  /* Adjusted width to accommodate two columns */
+  margin: 100px auto;
+  /* Center the form vertically */
+  display: flex;
+  flex-wrap: wrap;
+  /* Wrap input fields to next line */
+  justify-content: space-between;
+  /* Spacing between input fields */
+}
+
+.button-container {
+  width: 100%; /* Ensure the container spans the full width */
+  text-align: center; /* Center the contents horizontally */
+  margin-top: 20px; /* Adjust margin top as needed */
+}
+
+button {
+  background-color: #6c6d6c;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+    label,
+    input,
+    textarea,
+    select {
+      width: calc(50% - 5px);
+      /* Adjust width for two input fields per row */
+      padding: 12px;
+      margin: 5px 0;
+      /* Add some margin between rows */
+      box-sizing: border-box;
+    }
+
+  
+
+
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .footer-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-icons i {
+      font-size: 24px;
+      color: rgb(0, 0, 0);
+    }
+
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var username = document.getElementById('new_username').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('new_password').value;
+      var confirmPassword = document.getElementById('confirm_password').value;
+
+      if (username == "" || email == "" || password == "" || confirmPassword == "") {
+        alert("All fields must be filled out");
+        return false;
+      }
+
+      if (password != confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+      }
+
+      alert('Registering...');
+      return true;
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <img src="image/Library tlc.png" alt="Logo"
+      style="position: absolute; top: 10px; left: 10px; height: 50px;">
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About</a> |
+      <a href="ContactUs.html">Contact</a> |
+      <a href="display_reviews.php">Review</a> |
+      <a href="browser.html">Browse</a> |
+      <a href="login.html">Login</a> |
+      <a href="register.html">Register</a> |
+  </div>
+
+  <h2>Register</h2>
+  <form id="registrationForm" onsubmit="return validateForm()">
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br>
+    <label for="confirm_password">Confirm Password:</label><br>
+    <input type="password" id="confirm_password" name="confirm_password" required><br>
+    <label for="firstname">First Name:</label><br>
+    <input type="text" id="firstname" name="firstname" required><br>
+    <label for="lastname">Last Name:</label><br>
+    <input type="text" id="lastname" name="lastname" required><br><br>
+    <div class="button-container">
+      <button type="submit">Register</button>
+    </div>
+  </form>
+  </form>
+  <p id="loginLink">Already have an account? <a href="login.html">Login here</a></p>
+
+  <footer>
+    <div class="footer-icons">
+      <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
+      <a href="https://www.youtube.com" target="_blank"><i class="fa fa-youtube"></i></a>
+    </div>
+    <div class="footer-info">
+      <p>123 Library Street, Book City, 12345</p>
+      <p>Email: info@librarytlc.com</p>
+      <p>Phone: (123) 456-7890</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('registrationForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirm_password').value;
+        var firstname = document.getElementById('firstname').value;
+        var lastname = document.getElementById('lastname').value;
+
+        if (email === "" || password === "" || confirmPassword === "" || firstname === "" || lastname === "") {
+          alert("All fields must be filled out");
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match");
+          return;
+        }
+
+        // Send form data to server
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "register.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            if (!response.success) {
+              alert(response.message); // Display error message
+            } else {
+              alert(response.message); // Registration successful
+              // Optionally redirect user to another page
+              window.location.href = "login.html";
+            }
+          }
+        };
+        xhr.send("email=" + email + "&password=" + password + "&confirm_password=" + confirmPassword + "&firstname=" + firstname + "&lastname=" + lastname);
+      });
+
+      // Add event listener for Enter key press
+      document.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // Prevent default Enter key behavior
+          document.getElementById('registrationForm').dispatchEvent(new Event('submit')); // Submit the form
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

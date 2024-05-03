@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:rgb(220, 220, 220);
+        }
+        .navbar, footer {
+            background-color: #1b6b6e;
+            color: rgb(38, 38, 38);
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar a {
+            color: rgb(38, 38, 38);
+            padding: 10px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #1b6b6e;
+            color: rgb(51, 159, 153);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 80px auto 20px;
+            background-color:rgb(250, 250, 250);
+            padding: 0 20px;
+        }
+        .genre-section {
+            margin-bottom: 40px;
+            border: 2px solid rgb(250, 250, 250);
+            border-radius: 5px;
+            padding: 20px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .books-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .book {
+            width: 200px;
+            margin: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .book img {
+            max-width: 100%;
+            height: auto;
+        }
+        .book h3 {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        .book p {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        .footer-icons i {
+            font-size: 24px;
+            color: #ffffff;
+        }
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 5px;
+        }
+        .search-container {
+            position: relative;
+            display: inline-block;
+        }
+        .search-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .search-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+            display: none;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .search-dropdown-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .search-dropdown-item:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div>
+            <img src="logo.jpg" alt="Logo" style="height: 50px;">
+            <h2>Browser</h2>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <div class="search-dropdown">
+                <div class="search-dropdown-item">Result 1</div>
+                <div class="search-dropdown-item">Result 2</div>
+                <div class="search-dropdown-item">Result 3</div>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a> |
+            <a href="ContactUs.html">Contact</a> |
+            <a href="Review.html">Review</a> |
+            <a href="login.html">Login</a> |
+            <a href="register.html">Register</a> |
+    </div>
+
+
+    <div class="intro"></div>
+    <p class="mainbody">📚Below shows the best selling books at LibraryTLC including fiction and non-fiction books!</p>
+    <p>Explore the captivating world of literature with our curated selection of best-selling books, where fiction and non-fiction intertwine to offer an enriching reading experience.📚</p>
+
+    
+    <div class="container">
+        <section id="best-sellers" class="genre-section">
+            <h2>Best Sellers</h2>
+            <p>Explore our collection of best-selling books, curated based on popularity and reader recommendations.</p>
+            <div class="books-container">
+                <div class="book">
+                    <img src="bestseller1.jpg" alt="Best Seller 1">
+                    <h3>Normal People</h3>
+                    <p>Sally Rooney</p>
+                    <button onclick="purchase()">Purchase</button>
+                </div>
+                <div class="book">
+                    <img src="bestseller2.jpg" alt="Best Seller 2">
+                    <h3>The Silent Patient</h3>
+                    <p>Alex Michaelides</p>
+                    <button onclick="purchase()">Purchase</button>
+                </div>
+                <div class="book">
+                    <img src="bestseller3.jpg" alt="Best Seller 3">
+                    <h3>The Psychology of Money</h3>
+                    <p>Morgan Housel</p>
+                    <button onclick="purchase()">Purchase</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="fiction" class="genre-section">
+            <h2>Fiction</h2>
+            <p>Immerse yourself in captivating stories and imaginative worlds with our fiction collection.</p>
+            <div class="books-container">
+                <div class="book">
+                    <img src="fiction1.jpg" alt="Fiction 1">
+                    <h3>The Maid</h3>
+                    <p>Nita Prose</p>
+                    <button onclick="purchase()">Purchase</button>
+                </div>
+                <div class="book">
+                    <img src="fiction2.jpg" alt="Fiction 2">
+                    <h3>Promise</h3>
+                    <p>Rachel Eliza Griffiths</p>
+                    <button onclick="purchase()">Purchase</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="non-fiction" class="genre-section">
+            <h2>Non-Fiction</h2>
+            <p>Discover insightful reads and enriching knowledge with our non-fiction selection.</p>
+            <div class="books-container">
+                <div class="book">
+                    <img src="nonfiction1.jpg" alt="Non-Fiction 1">
+                    <h3>The Bee Sting</h3>
+                    <p>Paul Murray</p>
+                    <button onclick="purchase()">Purchase</button>
+                </div>
+                <div class="book">
+                    <img src="nonfiction2.jpg" alt="Non-Fiction 2">
+                    <h3>Pathfinders</h3>
+                    <p>JL Collins</p>
+                    <button onclick="purchase()">Purchase</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="footer-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-info">
+            <p>123 Library Street, Book City, 12345</p>
+            <p>Email: info@librarytlc.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </footer>
+
+    <script>
+        function purchase() {
+          
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+/* Reset some default styling */
+body, ul {
+    margin: 0;
+    padding: 0;
+   }
+   
+   /* Style the header */
+   header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+   }
+
+    /* Reset some default styling */
+    body, ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Style the navigation menu */
+    nav ul {
+        list-style-type: none;
+        display: flex; /* Add this line */
+        justify-content: space-between; /* Add this line */
+        width: 100%; /* Add this line */
+    }
+
+    nav ul li {
+        /* ... (existing li styles) ... */
+        flex: 1; /* Add this line */
+        text-align: center; /* Add this line */
+    }
+   
+   /* Style the navigation menu */
+   nav ul {
+    list-style-type: none; 
+   }
+   
+   nav ul li {
+    display: inline; 
+    margin-right: 10px; 
+   }
+   
+   /* Style the main content area */
+   .reviews {
+    display: flex; 
+    justify-content: space-around; 
+    padding-top :20px ;
+   }
+   
+   .review {
+    width :30% ;
+    height :200px ;
+    background-color :#d3d3d3 ;
+    text-align :center ;
+    font-size :24px ;
+    line-height :200px ; /* Centering the text vertically */
+    color:#fff ;
+   
+   }
+
+    /* Reset some default styling */
+    body, ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Style the main content area */
+    .reviews {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 20px;
+    }
+
+    .review {
+        width: 30%;
+        height: 250px; /* Increase the height for longer review boxes */
+        background-color: #d3d3d3;
+        text-align: center;
+        font-size: 24px;
+        line-height: 250px; /* Centering the text vertically */
+        color: #fff;
+    }
+
+   
+   /* Style footer */
+   
+   footer{
+    background-color:#333 ;
+    color:white ;
+    text-align:center ;  
+    padding-top :10px ;  
+    height :50px ;   
+   }
+
+   /* Style footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    height: 50px;
+    position: fixed; /* Add this line */
+    bottom: 0; /* Add this line */
+    width: 100%; /* Add this line */
+}
+
